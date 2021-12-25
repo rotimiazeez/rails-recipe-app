@@ -4,7 +4,5 @@ FactoryBot.define do
     preparation_time { 'MyString' }
     cooking_time { 'MyString' }
     description { 'MyText' }
-    public { false }
-    user { nil }
   end
 end

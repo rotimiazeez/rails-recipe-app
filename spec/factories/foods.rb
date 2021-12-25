@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :food do
-    name { 'MyString' }
-    measurement_unit { 1 }
-    price { 1 }
+    name { 'Name' }
+    measurement_unit { 'Unit' }
+    price { '5.99' }
     user { nil }
   end
 end

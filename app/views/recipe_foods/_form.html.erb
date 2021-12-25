@@ -13,20 +13,15 @@
 
   <div class="field">
     <%= form.label :quantity %>
-    <%= form.number_field :quantity %>
+    <%= form.text_field :quantity %>
   </div>
-
-  <div class="field">
-    <%= form.label :recipe_id %>
-    <%= form.text_field :recipe_id %>
-  </div>
-
   <div class="field">
     <%= form.label :food_id %>
-    <%= form.text_field :food_id %>
+    <%= form.select :food_id, @food.map{ |f| [f.name, f.id] } %>
   </div>
-
+  <div class="field">
+    <%= form.hidden_field :recipe_id, value: @recipe_food.recipe_id %>
+  </div>
   <div class="actions">
     <%= form.submit %>
-  </div>
 <% end %>

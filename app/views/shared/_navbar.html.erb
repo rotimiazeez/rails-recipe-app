@@ -1,0 +1,21 @@
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <% if user_signed_in? %>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <%= link_to "Food", foods_path, class: "navbar-item has-text-link" %>
+        <%= link_to "Recipes", recipes_path, class: "navbar-item has-text-link" %>
+        <%= link_to "Public recipes", public_recipes_path, class: "navbar-item has-text-link" %>
+        <%= link_to "Shopping list", shopping_list_path, class: "navbar-item has-text-link" %>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <span class="mr-3 has-text-success-dark">Logged in as: <strong><%= current_user.email%></strong></span>
+          <div class="buttons">
+            <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "button is-small is-danger is-outlined" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</nav>

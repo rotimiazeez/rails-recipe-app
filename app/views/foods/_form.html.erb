@@ -11,27 +11,28 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="field m-5">
+    <%= form.label :name, class: "label" %>
+    <div class="control">
+      <%= form.text_field :name, size: "50x10"%>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :measurement_unit %>
-    <%= form.number_field :measurement_unit %>
+  <div class="field m-5">
+    <%= form.label :measurement_unit, class: "label" %>
+    <div class="control">
+      <%= form.text_field :measurement_unit, size: "50x10"%>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+  <div class="field m-5">
+    <%= form.label :price, class: "label" %>
+    <div class="control">
+      <%= form.text_field :price, type: "number"%>
+    </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "button is-success is-focused m-5" %>
   </div>
 <% end %>

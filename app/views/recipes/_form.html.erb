@@ -12,36 +12,39 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :name, class: "label" %>
+    <div class="control">
+      <%= form.text_field :name, class: "input" %>
+    </div>
   </div>
 
   <div class="field">
-    <%= form.label :preparation_time %>
-    <%= form.text_field :preparation_time %>
+    <%= form.label :preparation_time, class: "label" %>
+    <div class="control">
+      <%= form.text_field :preparation_time, type: "time", class: "input" %>
+    </div>
   </div>
 
   <div class="field">
-    <%= form.label :cooking_time %>
-    <%= form.text_field :cooking_time %>
+    <%= form.label :cooking_time, class: "label" %>
+    <div class="control">
+      <%= form.text_field :cooking_time, type: "time", class: "input" %>
+    </div>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.label :description, class: "label" %>
+    <div class="control">
+      <%= form.text_area :description, class: "textarea" %>
+    </div>
   </div>
 
   <div class="field">
-    <%= form.label :public %>
+    <%= form.label :public, class: "checkbox" %>
     <%= form.check_box :public %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "button is-success is-focused mb-2"%>
   </div>
 <% end %>

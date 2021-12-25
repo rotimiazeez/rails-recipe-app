@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -9,8 +7,11 @@ class Ability
     if user.admin?
       can :manage, :all
     else
-      can %i[read create], :all
-      can %i[update destroy], Food, user: user
+      can :manage, Food, user: user
+      can :manage, Recipe, user: user
+      can :read, Food
+      can :read, Recipe, public: true
+      can :create, :all
     end
   end
 end

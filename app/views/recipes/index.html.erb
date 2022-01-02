@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class='has-text-centered m-5 is-size-3 has-text-weight-bold'>Recipes</h1>
+
+<div class="table-container m-3">
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipes.each do |recipe| %>
+        <tr>
+          <td><%= recipe.name %></td>
+          <td><%= recipe.description %></td>
+          <td><%= link_to 'Show', recipe, class: 'button is-link is-small'%></td>
+          <td><%= link_to 'Edit', edit_recipe_path(recipe), class: 'button is-warning is-small' %></td>
+          <td><%= link_to 'Delete', recipe, method: :delete, data: { confirm: 'Are you sure you want to delete this recipe?' }, class: 'button is-danger is-small' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to 'New Recipe', new_recipe_path, class: "button is-black is-focused is-pulled-right m-5" %>

@@ -1,17 +1,27 @@
 require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
-  subject { FactoryBot.build :recipe }
+  describe 'validates' do
+    subject { FactoryBot.build :recipe }
 
-  describe 'validations' do
-    describe 'description' do
-      context 'when valid' do
-        it { expect(subject).to be_valid }
-      end
+    it 'should have a name' do
+      subject.name = nil
+      expect(subject).to_not be_valid
+    end
 
-      context 'when not valid' do
-        subject { described_class.new }
-        it 'should be present' do
-          expect(subject).to_not be_valid
-        end
+    it 'should have a cooking time' do
+      subject.cooking_time = nil
+      expect(subject).to_not be_valid
+    end
+
+    it 'should have a preparation time' do
+      subject.preparation_time = nil
+      expect(subject).to_not be_valid
+    end
+
+    it 'should have description' do
+      subject.description = nil
+      expect(subject).to_not be_valid
+    end
+  end
 end
